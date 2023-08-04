@@ -52,15 +52,18 @@ function sendToRoboflow(){
       height = response.data.predictions[0].height;
       console.log(`x is: ${x} and y is: ${y} and height is: ${height} and width is: ${width}`)
 
-      console.log(`x is: ${x} and y is: ${y} and height is: ${height} and width is: ${width}`)
+     
 
       canvas.width = output.width;
       canvas.height = output.height;
-      context.drawImage(output, 10, 10);
+      context.drawImage(output, 0, 0);
+
+     let x1 = x - (width/2)
+     let y1 = y - (height/2)
 
       // Draw rectangle
       context.beginPath();
-      context.rect(x, y, width, height); // Change these values to adjust the position and size of the rectangle
+      context.rect(x1, y1, width,height); // Change these values to adjust the position and size of the rectangle
       context.lineWidth = "2";
       context.strokeStyle = "red";
       context.stroke();
@@ -69,3 +72,4 @@ function sendToRoboflow(){
       console.log(error.message);
   });
 }
+
