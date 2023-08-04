@@ -1,5 +1,5 @@
 let img;
-
+let x, y, width, height;
 let output = document.getElementById("output");
 
 function loadImage(file) {
@@ -44,7 +44,11 @@ function sendToRoboflow(){
   })
   .then(function(response) {
       console.log(response.data);
-      console.log(response.data.image)
+      x = response.data.predictions[0].x;
+      y = response.data.predictions[0].y;
+      width = response.data.predictions[0].width;
+      height = response.data.predictions[0].height;
+      console.log(`x is: ${x} and y is: ${y} and height is: ${height} and width is: ${width}`)
   })
   .catch(function(error) {
       console.log(error.message);
