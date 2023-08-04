@@ -1,6 +1,6 @@
 let img;
 
-let output = document.getElementById("#output");
+let output = document.getElementById("output");
 
 function loadImage(file) {
   return new Promise((resolve, reject) => {
@@ -9,6 +9,7 @@ function loadImage(file) {
     reader.onloadend = function() {
       console.log('Base64 String:', reader.result);
       resolve(reader.result);
+      output.src = reader.result;
     }
 
     reader.onerror = function() {
