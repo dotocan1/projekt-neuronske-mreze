@@ -60,15 +60,20 @@ function sendToRoboflow(){
       canvas.height = output.height;
       context.drawImage(output, 0, 0);
 
-     let x1 = x - (width/2)
-     let y1 = y - (height/2)
+      response.data.predictions.forEach(element => {
+        let x1 = element.x - (element.width / 2)
+        let y1 = element.y - (element.height / 2)
+   
+        // Draw rectangle
+        context.beginPath();
+        context.rect(x1, y1, element.width, element.height);
+        context.lineWidth = "2";
+        context.strokeStyle = "red";
+        context.stroke();
+});
 
-      // Draw rectangle
-      context.beginPath();
-      context.rect(x1, y1, width,height); // Change these values to adjust the position and size of the rectangle
-      context.lineWidth = "2";
-      context.strokeStyle = "red";
-      context.stroke();
+
+    
   })
   .catch(function(error) {
       console.log(error.message);
