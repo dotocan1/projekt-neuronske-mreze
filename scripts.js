@@ -1,6 +1,8 @@
 let img;
 let x, y, width, height;
 let output = document.getElementById("output");
+var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
 
 function loadImage(file) {
   return new Promise((resolve, reject) => {
@@ -49,6 +51,19 @@ function sendToRoboflow(){
       width = response.data.predictions[0].width;
       height = response.data.predictions[0].height;
       console.log(`x is: ${x} and y is: ${y} and height is: ${height} and width is: ${width}`)
+
+      console.log(`x is: ${x} and y is: ${y} and height is: ${height} and width is: ${width}`)
+
+      canvas.width = output.width;
+      canvas.height = output.height;
+      context.drawImage(output, 10, 10);
+
+      // Draw rectangle
+      context.beginPath();
+      context.rect(x, y, width, height); // Change these values to adjust the position and size of the rectangle
+      context.lineWidth = "2";
+      context.strokeStyle = "red";
+      context.stroke();
   })
   .catch(function(error) {
       console.log(error.message);
