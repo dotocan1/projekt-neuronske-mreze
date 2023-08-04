@@ -1,8 +1,10 @@
 let img;
 let x, y, width, height;
+let elementClass = document.getElementById("elementClass");
 let output = document.getElementById("output");
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
+
 
 function loadImage(file) {
   return new Promise((resolve, reject) => {
@@ -52,7 +54,7 @@ function sendToRoboflow(){
       height = response.data.predictions[0].height;
       console.log(`x is: ${x} and y is: ${y} and height is: ${height} and width is: ${width}`)
 
-     
+      elementClass.textContent = response.data.predictions[0].class;
 
       canvas.width = output.width;
       canvas.height = output.height;
