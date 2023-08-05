@@ -37,9 +37,9 @@ document.getElementById('imageUpload').addEventListener('change', function(e) {
 function sendToRoboflow(){
   axios({
       method: "POST",
-      url: "https://detect.roboflow.com/gargabedetection/2",
+      url: "https://detect.roboflow.com/garbagedetection2.0/3",
       params: {
-          api_key: "TYfb9ac1XcCwNghAqhLW"
+          api_key: "q1kAr5r6SCtp1VXpbQO0"
       },
       data: img,
       headers: {
