@@ -39,7 +39,9 @@ function sendToRoboflow(){
       method: "POST",
       url: "https://detect.roboflow.com/garbagedetection2.0/3",
       params: {
-          api_key: "q1kAr5r6SCtp1VXpbQO0"
+          api_key: "q1kAr5r6SCtp1VXpbQO0",
+          confidence: "25",
+          overlap:"50"
       },
       data: img,
       headers: {
