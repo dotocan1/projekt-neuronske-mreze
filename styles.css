@@ -1,0 +1,5 @@
+.image-container{
+    border: 5px solid #007bff; /* Bootstrap primary color */
+            border-radius: 5px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Shadow effect */
+}
