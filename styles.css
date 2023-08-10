@@ -1,15 +1,26 @@
 #container {
-    border: 5px solid #007bff;
-    /* Bootstrap primary color */
-    border-radius: 5px;
-    /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Shadow effect */
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 .image-container, .canvas-container{
     width: 640px;
     height: 640px;
+}
+
+.intro-heading{
+    width: 50%;
+    text-align: center;
+}
+
+#image-container{
+    display: flex;
+    flex-direction: row;
+}
+
+#image-container > canvas {
+    width: 50%;
 }

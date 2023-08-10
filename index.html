@@ -9,19 +9,30 @@
 </head>
 
 <body>
-    <div style="text-align:center;">
-        <!-- Image with 640px x 640px dimensions -->
-        <canvas id="uploaded-image"></canvas>
-
-        <!-- Input type file to upload a file -->
+    <div id="container">
+       
+        <div class = "intro-heading">
+            <h2>Feel free to upload an image within these categories and we will do our best to classify the object then draw a bounding box around it!</h2>
+        </div>
         <div>
             <label for="fileUpload">Choose a file:</label>
             <input type="file" id="imageUpload" name="fileUpload" accept="image/*">
         </div>
-
         <div>
-            <canvas id="myCanvas"></canvas>
+            <h3>The object on images has to belong in one of these categories: battery, clothes, paper, metal, plastic and cardboard.</h3>
         </div>
+        <div id="image-container">
+            <div>
+                <canvas id="uploaded-image"></canvas>
+            </div>
+            <div>
+                <canvas id="myCanvas"></canvas>
+            </div>
+            <div>
+                <h2 id="elementClass"></h2>
+            </div>
+        </div>
+        
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="module" src="./scripts.js"></script>

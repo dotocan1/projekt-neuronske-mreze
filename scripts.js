@@ -1,5 +1,5 @@
 let img;
-// let elementClass = document.getElementById("elementClass");
+let elementClass = document.getElementById("elementClass");
 var canvasBoundingBox = document.getElementById('myCanvas');
 let canvasUploadedImage = document.getElementById('uploaded-image');
 
@@ -87,10 +87,28 @@ function sendToRoboflow () {
         context.beginPath();
         context.rect(x1, y1, element.width, element.height);
         context.lineWidth = "2";
-        context.strokeStyle = "red";
+        // appoint a unique color for every class
+        if(element.class == "battery"){
+          context.strokeStyle = "red";
+        }else if(element.class == "metal"){
+          context.strokeStyle = "blue";
+        }else if(element.class == "paper"){
+          context.strokeStyle = "yellow";
+        } else if(element.class == "plastic"){
+          context.strokeStyle = "green";
+        }else if(element.class == "cardboard"){
+          context.strokeStyle = "purple";
+        } else{
+          context.strokeStyle = "brown";
+        }
         context.stroke();
+
+        arrayOfPredSentences.push("")
+
       });
 
+      // build the string then output it
+      // to list all items in the picture
 
 
     })
