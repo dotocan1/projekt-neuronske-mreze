@@ -5,26 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h3>Upload an image</h3></div>
-            <div class="col image-container">
-                <img id="output" src="" alt="" class="img-fluid" >
-            </div>
-            <div class="col">
-                <canvas id="myCanvas" class = "img-fluid" ></canvas>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col">
-                <input type="file" id="imageUpload" accept="image/*" class="form-control-file btn btn-primary">
-            </div>
-        </div>
+    <div style="text-align:center;">
+        <!-- Image with 640px x 640px dimensions -->
+        <canvas id="output"></canvas>
+
+        <!-- Input type file to upload a file -->
         <div>
-            <h3 id = "elementClass">Your class is: </h3>
+            <label for="fileUpload">Choose a file:</label>
+            <input type="file" id="imageUpload" name="fileUpload" accept="image/*">
+        </div>
+
+        <!-- Canvas with 640px x 640px dimensions -->
+        <div>
+            <canvas id="myCanvas"></canvas>
         </div>
     </div>
 
