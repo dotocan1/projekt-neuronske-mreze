@@ -2,10 +2,23 @@ let img;
 let elementClass = document.getElementById("elementClass");
 var canvasBoundingBox = document.getElementById('myCanvas');
 let canvasUploadedImage = document.getElementById('uploaded-image');
+let container = document.getElementById("container")
+let arrayOfPredSentences = [];
 
 
 function loadImage (file) {
   return new Promise((resolve, reject) => {
+
+    // Select all elements with class "output-txt"
+    const elements = document.querySelectorAll('.output-txt');
+
+    // Loop through the selected elements and remove them
+    elements.forEach(function (element) {
+      element.parentNode.removeChild(element);
+    });
+    // reset output text
+    arrayOfPredSentences = [];
+
     let reader = new FileReader();
 
     reader.onloadend = function () {
@@ -78,6 +91,8 @@ function sendToRoboflow () {
       // where the bounding box will be drawed on
       context.drawImage(canvasUploadedImage, 0, 0);
 
+
+
       // draw bounding box for every prediction
       response.data.predictions.forEach(element => {
         let x1 = element.x - (element.width / 2)
@@ -88,28 +103,34 @@ function sendToRoboflow () {
         context.rect(x1, y1, element.width, element.height);
         context.lineWidth = "2";
         // appoint a unique color for every class
-        if(element.class == "battery"){
+        if (element.class == "battery") {
           context.strokeStyle = "red";
-        }else if(element.class == "metal"){
+        } else if (element.class == "metal") {
           context.strokeStyle = "blue";
-        }else if(element.class == "paper"){
+        } else if (element.class == "paper") {
           context.strokeStyle = "yellow";
-        } else if(element.class == "plastic"){
+        } else if (element.class == "plastic") {
           context.strokeStyle = "green";
-        }else if(element.class == "cardboard"){
+        } else if (element.class == "cardboard") {
           context.strokeStyle = "purple";
-        } else{
+        } else {
           context.strokeStyle = "brown";
         }
         context.stroke();
 
-        arrayOfPredSentences.push("")
+        arrayOfPredSentences.push(`The class of the element is: ${element.class}, I am this much confident: ${element.confidence}`)
 
       });
 
       // build the string then output it
       // to list all items in the picture
+      arrayOfPredSentences.forEach(element => {
+        let outputTxt = document.createElement('h3');
+        outputTxt.textContent = element;
+        outputTxt.classList.add("output-txt")
+        container.appendChild(outputTxt)
 
+      })
 
     })
     .catch(function (error) {
