@@ -102,23 +102,30 @@ function sendToRoboflow () {
         context.beginPath();
         context.rect(x1, y1, element.width, element.height);
         context.lineWidth = "2";
+        let elementColor;
         // appoint a unique color for every class
         if (element.class == "battery") {
           context.strokeStyle = "red";
+          elementColor = "red";
         } else if (element.class == "metal") {
           context.strokeStyle = "blue";
+          elementColor = "blue";
         } else if (element.class == "paper") {
           context.strokeStyle = "yellow";
+          elementColor = "yellow";
         } else if (element.class == "plastic") {
           context.strokeStyle = "green";
+          elementColor = "green";
         } else if (element.class == "cardboard") {
           context.strokeStyle = "purple";
+          elementColor = "purple";
         } else {
           context.strokeStyle = "brown";
+          elementColor = "brown";
         }
         context.stroke();
 
-        arrayOfPredSentences.push(`The class of the element is: ${element.class}, I am this much confident: ${element.confidence}`)
+        arrayOfPredSentences.push(`The class of the element is: ${element.class}(${elementColor}), I am this much confident: ${element.confidence}`)
 
       });
 

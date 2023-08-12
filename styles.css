@@ -5,6 +5,7 @@
     text-align: center;
     align-items: center;
     margin: 1rem 0 0 0;
+    flex-wrap: wrap;
 }
 
 .intro-heading{
@@ -15,6 +16,7 @@
 #image-container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 #image-container > canvas {
