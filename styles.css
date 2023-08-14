@@ -34,7 +34,7 @@ body{
     width: 50%;
 }
 #imageUpload{
-    display: none;
+    /* display: none; */
 }
 #imageUploadLabel {
     border: 2px solid #333;
