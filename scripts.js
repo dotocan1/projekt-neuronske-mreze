@@ -49,7 +49,7 @@ function loadImage (file) {
 }
 
 
-document.getElementById('imageUpload').addEventListener('change', function (e) {
+document.getElementById('custom-file-upload').addEventListener('change', function (e) {
   var file = e.target.files[0];
   loadImage(file).then(result => {
 
@@ -125,7 +125,11 @@ function sendToRoboflow () {
         }
         context.stroke();
 
-        arrayOfPredSentences.push(`The class of the element is: ${element.class}(${elementColor}), I am this much confident: ${element.confidence}`)
+        // turn confidence to 2 decimal number
+        let twoDecConf = element.confidence.toString().slice(0,3);
+        twoDecConf*= 100;
+
+        arrayOfPredSentences.push(`The class of the element is: ${element.class}(${elementColor}), I am this much confident: ${twoDecConf}%`);
 
       });
 

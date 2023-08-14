@@ -28,6 +28,7 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 1rem 0 0 0;
 }
 
 #image-container > canvas {
@@ -36,9 +37,10 @@ body{
 input[type="file"]{
     display: none;
 }
-.custom-file-upload {
+#custom-file-upload {
     border: 2px solid #333;
     border-radius: 10px;
+    margin: 1rem 0 0 0;
     padding: 10px 15px;
     background-color: #00cec9;
     color: #333;
@@ -46,6 +48,6 @@ input[type="file"]{
     display: inline-block;
   }
   
-.custom-file-upload:hover {
+#custom-file-upload:hover {
     background-color: #00b3a6; /* Slightly darker on hover */
-  }
+}
