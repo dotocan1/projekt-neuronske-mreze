@@ -6,20 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <title>GarbageDetection2.0</title>
 </head>
 
 <body>
     <div id="container">
-       
-        <div class = "intro-heading">
-            <h2>Feel free to upload an image within these categories and we will do our best to classify the object then draw a bounding box around it!</h2>
+
+        <div class="intro-heading">
+            <h2>Feel free to upload an image within these categories and we will do our best to classify the object then
+                draw a bounding box around it!</h2>
         </div>
         <div>
-            <label for="fileUpload" id="imageUploadLabel"><input type="file" id="imageUpload" name="fileUpload" accept="image/*">Choose a file:</label>
-            
+            <label class="custom-file-upload">
+                <input type="file" />
+                Upload your image:
+            </label>
+
         </div>
         <div>
-            <h3>The object on images has to belong in one of these categories: battery, clothes, paper, metal, plastic and cardboard.</h3>
+            <h3>The object on images has to belong in one of these categories: battery, clothes, paper, metal, plastic
+                and cardboard.</h3>
         </div>
         <div id="image-container">
             <div>
@@ -32,7 +38,7 @@
                 <h2 id="elementClass"></h2>
             </div>
         </div>
-        
+
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="module" src="./scripts.js"></script>
