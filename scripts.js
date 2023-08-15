@@ -31,9 +31,7 @@ function loadImage (file) {
 
         // Create a canvas to resize the image
         let ctx = canvasUploadedImage.getContext('2d');
-        canvasUploadedImage.width = 640;
-        canvasUploadedImage.height = 640;
-        ctx.drawImage(img, 0, 0, 640, 640);
+        ctx.drawImage(img, 0, 0, 600, 600);
         // Convert the canvas image to Base64
         let base64Image = canvasUploadedImage.toDataURL('image/jpeg');
 
@@ -86,9 +84,7 @@ function sendToRoboflow () {
       console.log(response.data);
       // elementClass.textContent = response.data.predictions[0].class;
 
-      // set the canvas to 640x640 dimensions
-      canvasBoundingBox.width = canvasUploadedImage.width;
-      canvasBoundingBox.height = canvasUploadedImage.height;
+     
       let context = canvasBoundingBox.getContext('2d');
 
       // draw the uploaded image on the canvas

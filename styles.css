@@ -73,3 +73,12 @@ input[type="file"]{
 #custom-file-upload:hover {
     background-color: #00b3a6; /* Slightly darker on hover */
 }
+
+
+@media only screen and (max-width: 768px) {
+    #image-container * {
+        height: 300px;
+        width: 300px;
+    }
+  }
+  
