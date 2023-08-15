@@ -33,6 +33,10 @@ h2{
     color: #000000;
 }
 
+#symbol-container{
+    margin: 0 0 1rem 0;
+}
+
 #image-container{
     display: flex;
     flex-direction: row;
