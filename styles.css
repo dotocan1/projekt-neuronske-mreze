@@ -49,6 +49,7 @@ h2{
     flex-wrap: wrap;
     margin: 1rem 0 0 0;
     row-gap: 2rem;
+    column-gap: 2rem;
     justify-content: center;
     justify-content: center;
 }
