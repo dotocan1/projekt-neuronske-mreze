@@ -130,8 +130,9 @@ function sendToRoboflow () {
         context.stroke();
 
         // turn confidence to 2 decimal number
-        let twoDecConf = element.confidence.toString().slice(0,3);
-        twoDecConf*= 100;
+        let twoDecConf= 100 * element.confidence;
+        twoDecConf = twoDecConf.toString().slice(0,2);
+        
 
         arrayOfPredSentences.push(`The class of the element is: ${element.class}(${elementColor}), I am this much confident: ${twoDecConf}%`);
 
