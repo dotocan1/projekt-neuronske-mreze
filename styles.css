@@ -17,7 +17,7 @@ body{
     background-color: #4cd137;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 10px;
-    width: max(700px,1350px);
+    width: max(700px,1450px);
 }
 
 h3{
@@ -42,6 +42,7 @@ h2{
     flex-direction: row;
     flex-wrap: wrap;
     margin: 1rem 0 0 0;
+    row-gap: 2rem;
 }
 
 #image-container > canvas {
