@@ -14,13 +14,20 @@ body{
     margin: 1rem 0 0 0;
     flex-wrap: wrap;
     background-color: #00cec9;
-    width: 80%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 10px;
+    width: max(700px,1350px);
+}
+
+h3{
+    font-size: clamp(12px,3vw,20px);
+}
+
+h2{
+    font-size: clamp(18px,6vw,28px);
 }
 
 .intro-heading{
-    width: 50%;
     text-align: center;
 }
 

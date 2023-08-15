@@ -4,7 +4,9 @@ var canvasBoundingBox = document.getElementById('myCanvas');
 let canvasUploadedImage = document.getElementById('uploaded-image');
 let container = document.getElementById("container")
 let arrayOfPredSentences = [];
+let imageContainer = document.getElementById('image-container');
 
+imageContainer.style.display = "none"
 
 function loadImage (file) {
   return new Promise((resolve, reject) => {
@@ -24,6 +26,8 @@ function loadImage (file) {
     reader.onloadend = function () {
       const img = new Image();
       img.onload = function () {
+
+        imageContainer.style.display = "flex"
 
         // Create a canvas to resize the image
         let ctx = canvasUploadedImage.getContext('2d');
