@@ -4,6 +4,8 @@ body{
     justify-content: center;
     align-items: center;
     color: #333333;
+    font-family: 'Indie Flower', cursive;
+font-family: 'Work Sans', sans-serif;
 }
 #container {
     padding: 2rem 2rem 2rem 2rem;
@@ -45,9 +47,6 @@ h2{
     row-gap: 2rem;
 }
 
-#image-container > canvas {
-    width: 50%;
-}
 input[type="file"]{
     display: none;
 }
