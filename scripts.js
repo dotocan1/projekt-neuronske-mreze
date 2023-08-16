@@ -27,7 +27,7 @@ function loadImage (file) {
       const img = new Image();
       img.onload = function () {
 
-        imageContainer.style.display = "flex"
+        imageContainer.style.display = ""
 
         // Create a canvas to resize the image
         let ctx = canvasUploadedImage.getContext('2d');
