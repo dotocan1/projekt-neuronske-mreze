@@ -84,14 +84,12 @@ function sendToRoboflow () {
       console.log(response.data);
       // elementClass.textContent = response.data.predictions[0].class;
 
-     
+
       let context = canvasBoundingBox.getContext('2d');
 
       // draw the uploaded image on the canvas
       // where the bounding box will be drawed on
       context.drawImage(canvasUploadedImage, 0, 0);
-
-
 
       // draw bounding box for every prediction
       response.data.predictions.forEach(element => {
@@ -126,9 +124,9 @@ function sendToRoboflow () {
         context.stroke();
 
         // turn confidence to 2 decimal number
-        let twoDecConf= 100 * element.confidence;
-        twoDecConf = twoDecConf.toString().slice(0,2);
-        
+        let twoDecConf = 100 * element.confidence;
+        twoDecConf = twoDecConf.toString().slice(0, 2);
+
 
         arrayOfPredSentences.push(`The class of the element is: ${element.class}(${elementColor}), I am this much confident: ${twoDecConf}%`);
 
@@ -136,14 +134,19 @@ function sendToRoboflow () {
 
       // build the string then output it
       // to list all items in the picture
-      arrayOfPredSentences.forEach(element => {
-        let outputTxt = document.createElement('h3');
-        outputTxt.textContent = element;
-        outputTxt.classList.add("output-txt")
+      let outputTxt = document.createElement('h3');
+      outputTxt.classList.add("output-txt")
+      console.log(`${response.data.predictions.length} is the length`)
+      if (response.data.predictions.length == 0) {
+        outputTxt.textContent = "No objects found within the image!";
         container.appendChild(outputTxt)
+      } else {
+        arrayOfPredSentences.forEach(element => {
+          outputTxt.textContent = element;
+          container.appendChild(outputTxt)
 
-      })
-
+        })
+      }
     })
     .catch(function (error) {
       console.log(error.message);
