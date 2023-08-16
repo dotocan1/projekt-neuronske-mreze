@@ -134,14 +134,14 @@ function sendToRoboflow () {
 
       // build the string then output it
       // to list all items in the picture
-      let outputTxt = document.createElement('h3');
-      outputTxt.classList.add("output-txt")
       console.log(`${response.data.predictions.length} is the length`)
       if (response.data.predictions.length == 0) {
         outputTxt.textContent = "No objects found within the image!";
         container.appendChild(outputTxt)
       } else {
         arrayOfPredSentences.forEach(element => {
+          let outputTxt = document.createElement('h3');
+          outputTxt.classList.add("output-txt")
           outputTxt.textContent = element;
           container.appendChild(outputTxt)
 
