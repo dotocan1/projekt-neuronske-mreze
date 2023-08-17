@@ -12,7 +12,6 @@ This project was developed as part of a college assignment, the project is an im
 
 [The link to the dataset can be found here](https://app.roboflow.com/projektneuronskemreze/garbagedetection2.0/6)
 <br>
-<br>
 [Link to the live version can be found here](https://dotocan1.github.io/projekt-neuronske-mreze/)
 ## Features
 
