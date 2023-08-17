@@ -8,9 +8,11 @@ This project was developed as part of a college assignment, the project is an im
 - Cardboard
 - Metal
 
+## Sources
+
+The link to the dataset can be found here:
+Link to the page can be found here:
 ## Features
 
 - Custom-trained model for detecting specific recyclable materials.
 - Web interface for user interaction and visualizing detections.
-
-This project w
