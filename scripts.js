@@ -31,7 +31,7 @@ function loadImage (file) {
 
         // Create a canvas to resize the image
         let ctx = canvasUploadedImage.getContext('2d');
-        ctx.drawImage(img, 0, 0, 600, 600);
+        ctx.drawImage(img, 0, 0, 640, 640);
         // Convert the canvas image to Base64
         let base64Image = canvasUploadedImage.toDataURL('image/jpeg');
 
