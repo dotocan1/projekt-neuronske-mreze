@@ -137,6 +137,7 @@ function sendToRoboflow () {
       console.log(`${response.data.predictions.length} is the length`)
       if (response.data.predictions.length === 0) {
         let outputTxt = document.createElement('h3');
+        outputTxt.classList.add("output-txt")
         outputTxt.textContent = "No objects found within the image!";
         container.appendChild(outputTxt)
       } else {
