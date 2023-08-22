@@ -68,12 +68,11 @@ document.getElementById('custom-file-upload').addEventListener('change', functio
 function sendToRoboflow () {
   axios({
     method: "POST",
-    url: "https://detect.roboflow.com/garbagedetection2.0/5",
+    url: "https://detect.roboflow.com/garbagedetection2.0/6",
     params: {
       api_key: "q1kAr5r6SCtp1VXpbQO0",
       // interference hyperparameters
-      confidence: "84",
-      overlap: "53"
+      confidence: "53"
     },
     data: img,
     headers: {
