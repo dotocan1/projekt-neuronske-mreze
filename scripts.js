@@ -72,8 +72,8 @@ function sendToRoboflow () {
     params: {
       api_key: "q1kAr5r6SCtp1VXpbQO0",
       // interference hyperparameters
-      confidence: "25",
-      overlap: "50"
+      confidence: "84",
+      overlap: "53"
     },
     data: img,
     headers: {
@@ -135,7 +135,8 @@ function sendToRoboflow () {
       // build the string then output it
       // to list all items in the picture
       console.log(`${response.data.predictions.length} is the length`)
-      if (response.data.predictions.length == 0) {
+      if (response.data.predictions.length === 0) {
+        let outputTxt = document.createElement('h3');
         outputTxt.textContent = "No objects found within the image!";
         container.appendChild(outputTxt)
       } else {
